@@ -10,7 +10,7 @@ GROUP BY CustomerID
 HAVING COUNT(*) >= 2; #only selecting those customers who had orders >=2#
 
 
---- SELECT, FROM, WHERE, ORDER BY, GROUP BY, HAVING ---
+--- SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY ---
 
 SELECT SupplierID, COUNT(*) AS Num_Prod
 FROM Products
