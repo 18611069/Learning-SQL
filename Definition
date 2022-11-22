@@ -1,0 +1,11 @@
+SQL stands for Structured Query Language
+
+The fields ==> A field is a column in a table that is designed to maintain specific information about every record in the table.
+---> example: in the Customers table consist of CustomerID, CustomerName, Country, etc.
+
+A record ==> also called a row, is each individual entry that exists in a table. A record is a horizontal entity in a table.
+---> example: there are 91 records in the above Customers table.
+
+A column ==> a vertical entity in a table that contains all information associated with a specific field in a table.
+
+Source: w3schools
