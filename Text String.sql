@@ -2,7 +2,7 @@
 # note: SQL server support + instead of || #
 SELECT ComapanyName, ContactName, CompanyName || '(' || ContactName || ')'
 FROM customers
-# resultnya misal company name= Vivi dan ContactName= Z jadinya Vivi(z) #
+# resultnya misal company name= Vivi dan ContactName= Z jadinya Vivi(Z) #
 
 --- Trimming Strings ---
 TRIM
