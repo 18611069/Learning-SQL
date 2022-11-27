@@ -29,8 +29,8 @@ WHERE department_id=100;
 # ex: first name = Nancy, substr = ncy. first name = Margaret, substr = rgar #
 
 --- UPPER AND LOWER ---
-SELECT UPPER(column_name) FRIN table_name;
+SELECT UPPER(column_name) FROM table_name;
 
-SELECT LOWER(column_name) FRIN table_name;
+SELECT LOWER(column_name) FROM table_name;
 
-SELECT UCASE(column_name) FRIN table_name;
+SELECT UCASE(column_name) FROM table_name;
