@@ -1,0 +1,31 @@
+---Expected to work with data contains only the date portion. If a time portion is involved, it gets more complicated---
+--- The date you are trying to insert MUST matches the format of date column in database ---
+### Dates are stored as DATETYPES. Each DBMS uses it's own variety of datatypes ###
+
+------ Date Formats ------
+# DATE --> YYYY-MM-DD #
+# DATETIME --> YYYY-MM-DD HH:MI:SS #
+# TIMESTAMP --> YYYY-MM-DD HH:MI:SS #
+
+---> STRFTIME (String Format Time) used to extract certain elements of a date/time string <---
+SELECT Birthdate, STRFTIME('%Y', Birthdate) AS Year
+, STRFTIME('%m', Birthdate) AS Month
+, STRFTIME('%d', Birthdate) AS Day
+FROM employees
+
+------------ Compute current date (Frequently in analysis, you use this to see how many days it has been since a customer submitted an order ----------
+
+SELECT DATE('now')
+
+------------ Compute year, month, and day for the current date ----------
+SELECT STRFTIME('%Y %m %d', 'now')
+
+------------ Compute the Hour, Minute and Second and Miliseconds from Current DATETIME ----------
+SELECT STRFTIME('%H %M %S %s', 'now');
+
+---------- Compute AGE using birthdate to create it into an Age column ----------
+SELECT Birthdate, STRFTIME('%Y, Birthdate) AS Year
+, STRFTIME(%m, Birthdate) AS Month
+, STRFTIME(%d, Birthdate) AS Day
+, DATE(('now')-Birthdate) AS Age
+FROM employees
