@@ -1,0 +1,13 @@
+Data profiling ==> looking at descriptive statistics or object data information
+start with understanding:
+- how many rows are in the table (important if you do left join from a table that has 100 rows on the left side, and then 50 on the right side, and you only get 50 rows back)
+- when was the object last updated
+- table size
+- column data type
+- number of distinct values
+- number of rows with NULL values
+- Descriptive stat: max, min, standard deviation for column values
+
+Data Governance ==> dependent upon what the data strategy is at the company you're working for. Some have really strict governance policies, and some are more open and free.
+If you created a model and you want to give those predictive scores and write them back to the database, what environments do you have set up? Is this something that you're gonnabe able to go through development, acceptance, and production? What is the process for that and what are you writing it to?
+Understanding governance regulations around them!
