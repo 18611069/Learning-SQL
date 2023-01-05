@@ -1,3 +1,6 @@
+select * from ms_item_kategori, ms_item_warna
+where nama_barang=nama_item;
+
 ------------ Cartesian (Cross) Join -----------
 # Cross Joins => EACH row from the first table joins with ALL the rows of another table 
 # Ex : 1st table (1, 2, 3), 2nd table (a, b, c) => 1a, 1b, 1c, 2a, 2b, 2c, 3a, 3b, 3c #
