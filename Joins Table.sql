@@ -29,6 +29,8 @@ FROM Customer C
 LEFT JOIN Orders O ON C.CustomerID = O.Customer.ID
 ORDER BY C.CustomerName;
 
+select * from ms_item_kategori a inner join ms_item_warna b on a.nama_item=b.nama_barang
+
 
 ------------- Right Join -------------
 # Returns all records from the right table (table2) and the matched records from the left table (table1) #
