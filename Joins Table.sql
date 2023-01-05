@@ -1,6 +1,9 @@
 select * from ms_item_kategori, ms_item_warna
 where nama_barang=nama_item;
 
+# jika akan menggabungkan kedua tabel, dengan menyatakan tabel ms_item_warna terlebih dahulu di bagian FROM, tetapi yang ingin dimunculkan kolomnya di awal hasil adalah dari yang ms_item_kategori, maka querynya akan menjadi sebagai berikut.#
+select ms_item_kategori.*,ms_item_warna.* from ms_item_warna, ms_item_kategori where nama_barang=nama_item;
+
 ------------ Cartesian (Cross) Join -----------
 # Cross Joins => EACH row from the first table joins with ALL the rows of another table 
 # Ex : 1st table (1, 2, 3), 2nd table (a, b, c) => 1a, 1b, 1c, 2a, 2b, 2c, 3a, 3b, 3c #
