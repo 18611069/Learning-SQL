@@ -13,6 +13,8 @@ FROM suppliers CROSS JOIN products
 # Note : table 1 = suppliers, table 2 = products #
 # output will be 1st table (29 records) multiplied by the number of rows in the 2nd table (77 records) = 2233 records #
 
+select * from ms_item_kategori, ms_item_warna;
+
 
 ------------ Inner Joins ------------
 # select records that have matching values in both tables #
