@@ -7,6 +7,12 @@ select * from tabel_a
 union
 select * from tabel_b;
 
+select * from tabel_a
+where kode_produk='prod-04'
+union
+select * from tabel_b
+where kode_produk='prod-04';
+
 SELECT City, Country FROM Customers
 WHERE Country='Germany'
 UNION
