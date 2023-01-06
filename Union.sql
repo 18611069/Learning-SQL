@@ -19,3 +19,9 @@ UNION
 SELECT City, Country FROM Suppliers
 WHERE Country='Germany'
 ORDER BY City;
+
+select customername, contactname, city, postalcode
+from customers
+union
+select suppliername, contactname, city, postalcode
+from suppliers;
