@@ -3,6 +3,10 @@
 # columns must have similar data types #
 # the columns in each SELECT statement must be in the same order #
 
+select * from tabel_a
+union
+select * from tabel_b;
+
 SELECT City, Country FROM Customers
 WHERE Country='Germany'
 UNION
