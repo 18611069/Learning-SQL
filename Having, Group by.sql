@@ -55,3 +55,9 @@ FROM Products
 WHERE UnitPrice >=4
 GROUP BY SupplierID
 HAVING COUNT(*) >= 2;
+
+select product_id, max(total_price) as total from invoice group by product_id;
+
+select product_id, max(total_price) as total from invoice group by product_id having max(total_price) > 1000000;
+
+select product_id, max(pinalty) as total from invoice group by product_id having max(pinalty) > 30000;
