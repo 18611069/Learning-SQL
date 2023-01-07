@@ -28,6 +28,12 @@ SELECT o.OrderID, c.CompanyName, e.LastName
 FROM ((Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID)
 INNER JOIN Employeees e ON o.Employee.ID = e.EmployeeID);
 
+select distinct ms_pelanggan.kode_pelanggan, ms_pelanggan.nama_customer, ms_pelanggan.alamat
+from ms_pelanggan
+inner join tr_penjualan
+on ms_pelanggan.kode_pelanggan=tr_penjualan.kode_pelanggan
+where tr_penjualan.nama_produk = 'Kotak Pensil DQLab' or tr_penjualan.nama_produk ='Flashdisk DQLab 32 GB' or tr_penjualan.nama_produk ='Sticky Notes DQLab 500 sheets';
+
 ------------ Left Join -------------
 # Returns all records from the left table (table1) and the matched records from the right table (table2) #
 # if there is no match, the results is NULL from the right side #
