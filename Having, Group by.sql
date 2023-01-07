@@ -17,6 +17,11 @@ HAVING COUNT(customer_id)> 1; #the result is count of cust_id who had cust_id >1
 
 --- SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY ---
 
+select product_id, avg(pinalty), count(customer_id) as total
+from invoice
+group by product_id
+having count(customer_id)>20;
+
 SELECT 
 	customer_id,
     product_id,
