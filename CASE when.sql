@@ -41,7 +41,7 @@ FROM sales_retail_2019
 GROUP BY MONTH(order_date);
 
 
-## Rata - Rata total belanja per kode pelanggan.
+## Rata - Rata total belanja per kode pelanggan. ##
 SELECT kode_pelanggan, avg(total) as avg_total 
 FROM tr_penjualan
 GROUP BY kode_pelanggan;
@@ -66,3 +66,16 @@ CASE
     WHEN Average_Transaction < 1000000 and count_transaction < 20 then 'silver member'
     	ELSE 'other membership' end as Membership
 FROM summary_transaction
+
+
+SELECT DISTINCT
+Customer_ID,
+Product,
+Average_transaction,
+Count_Transaction,
+CASE
+when Average_transaction < 1000000 then '4-5x Email dalam seminggu'
+when Average_transaction > 1000000 then '1-2x Email dalam seminggu'
+END AS frekuensi_email
+FROM summary_transaction
+
