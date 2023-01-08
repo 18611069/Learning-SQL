@@ -53,3 +53,16 @@ CASE
     ELSE 'Medium'  
 END as kategori 
 FROM tr_penjualan;
+
+
+SELECT distinct
+Customer_ID,
+Product,
+Average_Transaction,
+Count_Transaction,
+CASE
+	WHEN Average_Transaction > 2000000 and count_transaction > 30 then 'platinum member'
+    WHEN Average_Transaction BETWEEN 1000000 and 2000000 and count_transaction between 20 and 30 then 'gold member'
+    WHEN Average_Transaction < 1000000 and count_transaction < 20 then 'silver member'
+    	ELSE 'other membership' end as Membership
+FROM summary_transaction
