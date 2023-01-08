@@ -15,3 +15,17 @@ SELECT Distinct
 FROM summary_transaction
 where (Average_transaction >= 1000000)= '1';
 
+SELECT
+	Customer_ID, Product, average_transaction_amount,
+    product = 'jaket' AND average_transaction_amount >= 1000000 loyal_buyer_jaket
+FROM data_retail
+WHERE product = 'jaket'
+
+SELECT 
+     customer_id, 
+     product, 
+     average_transaction_amount,
+     product = 'jaket' OR product = 'baju' buyer_fashion
+FROM data_retail;
+# nilai 1 ketika produk yang dibeli merupakan jaket atau baju. Namun, ketika customer membeli produk tas atau sepatu, maka akan bernilai 0 #
+
