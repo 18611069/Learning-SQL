@@ -29,3 +29,8 @@ SELECT customer_name, customer_state
   WHERE Orders.customer_id = Customer.customer_id) AS orders
 FROM customers
 ORDER BY Customer_name;
+
+
+Subquery harus berada dalam tanda kurung
+Subquery hanya dapat memiliki satu kolom pada klausa SELECT.
+Subquery yang menghasilkan nilai lebih dari satu hanya dapat digunakan dalam operator IN
