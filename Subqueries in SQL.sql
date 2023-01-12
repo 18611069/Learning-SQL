@@ -4,7 +4,7 @@ SELECT CustomerID, CompanyName, Region
 FROM Customers
 WHERE customerID in (SELECT CustomerID FROM Orders WHERE Freight > 100);
 
-# Note : SELECT only a single column (can't retrieve all columns (*)) #
+# Note : SELECT only a single column (cant retrieve all columns (*)) #
 
 SELECT Costumer_name, Costumer_contact
 FROM Customers
@@ -34,3 +34,19 @@ ORDER BY Customer_name;
 Subquery harus berada dalam tanda kurung
 Subquery hanya dapat memiliki satu kolom pada klausa SELECT.
 Subquery yang menghasilkan nilai lebih dari satu hanya dapat digunakan dalam operator IN
+
+--- single row subquery in where query ---
+select id, count_transaction
+from data_retail
+where count_transaction > (select avg(count_transaction) avg_transaction from data_retail)
+
+--- multiple row subquery usually used in IN, ANY, ALL query---
+# ex: jika ingin mendapatkan siapa saja customer yang membeli sepatu dan juga membeli tas #
+select distinct customer_id
+where product = 'sepatu'
+      customer_id IN (select distinct customer_id from data_retail where product = 'tas')
+      
+--- Correlated Subquery ---
+select distinct customer_id
+where product = 'sepatu'
+and customer_id IN (select distinct customer_id from data_retail where product = 'tas')
