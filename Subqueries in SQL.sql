@@ -78,3 +78,15 @@ JOIN (select Customer_ID, sum(Count_Transaction) transaksi_jaket
       where product = 'Jaket'
       group by 1) B on a.Customer_ID = b.Customer_ID
 ORDER BY 2 DESC,3 DESC
+
+
+#membandingkan total_transaksi dengan rata-rata transaksi#
+SELECT
+	customer_id, count_transaction,
+    (
+    SELECT AVG(count_transaction)
+    		FROM data_retail
+            WHERE product = 'sepatu'
+    ) Avg_Transaction
+FROM data_retail
+WHERE product = 'sepatu';
