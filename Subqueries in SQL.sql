@@ -39,7 +39,7 @@ Subquery yang menghasilkan nilai lebih dari satu hanya dapat digunakan dalam ope
 select id, count_transaction
 from data_retail
 where count_transaction > (select avg(count_transaction) avg_transaction from data_retail)
-# the output is only 1. avg_transaction = 12.1224
+# the output is only 1. avg_transaction = 12.1224 #
 
 --- multiple row subquery usually used in IN, ANY, ALL query---
 # ex: jika ingin mendapatkan siapa saja customer yang membeli sepatu dan juga membeli tas #
@@ -56,3 +56,13 @@ and customer_id IN (select distinct customer_id from data_retail where product =
 select a.id, a.product, a.count_transaction
 from data_rateil
 where count_transaction > (select avg(b.count_transaction) avg_transaction from data_retail b where a.product=b.product)
+
+#Menghitung customer yang membeli Sepatu (utama) dan Jaket(tambahan)#
+SELECT COUNT(DISTINCT customer_id) total_buyer_Sepatu_Jaket
+FROM data_retail
+WHERE product = 'Sepatu' 
+AND customer_id IN (
+ 	SELECT distinct Customer_ID
+    FROM data_retail
+    WHERE product = 'Jaket');
+
