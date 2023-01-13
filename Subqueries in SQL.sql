@@ -90,3 +90,24 @@ SELECT
     ) Avg_Transaction
 FROM data_retail
 WHERE product = 'sepatu';
+
+
+#persentasi loyal customer disetiap produk. Definisi dari loyal customer adalah customer dengan jumlah transaksi lebih dari rata-rata jumlah transaksi permasing-masing produk#
+SELECT 
+A.Product, 
+A.total_buyer, 
+D.loyal_customer
+FROM (
+   SELECT product, count(distinct customer_id) total_buyer
+   FROM data_retail
+   group by 1) A
+JOIN (
+   SELECT B.product, count(distinct customer_id) loyal_customer
+   FROM data_retail B
+   JOIN (
+    SELECT product, avg(count_transaction) AS Count_Transaction
+    FROM data_retail 
+    GROUP BY 1
+   ) C ON C.product = B.product AND B.count_transaction > C.count_transaction
+   GROUP BY 1
+   ) D ON A.product = D.product
