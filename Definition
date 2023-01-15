@@ -9,3 +9,10 @@ A record ==> also called a row, is each individual entry that exists in a table.
 A column ==> a vertical entity in a table that contains all information associated with a specific field in a table.
 
 Source: w3schools
+
+THE RESULTS IS THE SAME
+SELECT * FROM table1 WHERE nama = 'Cyntia' OR nama = 'Rheny';
+SELECT * FROM table1 WHERE nama IN ('Cyntia', 'Rheny')
+SELECT * FROM table1 WHERE nama LIKE 'Cyntia' OR nama LIKE 'Rheny'
+
+
