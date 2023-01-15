@@ -37,6 +37,7 @@ where tr_penjualan.nama_produk = 'Kotak Pensil DQLab' or tr_penjualan.nama_produ
 ------------ Left Join -------------
 # Returns all records from the left table (table1) and the matched records from the right table (table2) #
 # if there is no match, the results is NULL from the right side #
+# if left table (id(1,2,3,4), kurs(usd, sgd, eur, aud) & right table (id(1,2,3,4,5), kurs(1,2,3,4,2), kurs_value(1000,2000,2000,1400,2444)) ==> the result table is 5#
 
 SELECT C.CustomerName, O.OrderID
 FROM Customer C
@@ -49,6 +50,7 @@ select * from ms_item_kategori a inner join ms_item_warna b on a.nama_item=b.nam
 ------------- Right Join -------------
 # Returns all records from the right table (table2) and the matched records from the left table (table1) #
 # if there is no match, the results is NULL from the left side #
+# if left table (id(1,2,3,4), kurs(usd, sgd, eur, aud) & right table (id(1,2,3,4,5), kurs(1,2,3,4,2), kurs_value(1000,2000,2000,1400,2444)) ==> the result table is 5#
 
 SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
 FROM Orders
