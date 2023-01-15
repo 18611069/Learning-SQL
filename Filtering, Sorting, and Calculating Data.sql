@@ -110,7 +110,7 @@ GROUP BY
  # "EXTRACT(monthyear from timestamp)" akan mengeluarkan data berupa bulan dan tahun transaksi#
  # data last transaction dibawah merupakan data epoch, angka 1531280000000 dibawah ini merupakan data dalam format milliseconds, maka dari itu last_transaction akan dibagi dengan 1000 untuk mendapatkan angka dalam jumlah detik#
  
- ------------ penjualan tertinggi & terendah 3 bulan teratas produk 'Sepatu' pada tahun 2018 - 2019 ------------
+ ------------ penjualan tertinggi 3 bulan teratas produk 'Sepatu' pada tahun 2018 - 2019 ------------
  SELECT 
 	EXTRACT(YEAR_MONTH from (from_unixtime(last_transaction/1000))) year_month_transaction,
    	sum(Count_Transaction) total_pembelian_produk
@@ -123,6 +123,23 @@ GROUP BY
 	1
 ORDER BY 
 	2 desc
+LIMIT 
+	3
+
+ ------------ penjualan terendah 3 bulan teratas produk 'Sepatu' pada tahun 2018 - 2019 ------------
+ 
+ SELECT 
+	EXTRACT(YEAR_MONTH from (from_unixtime(last_transaction/1000))) year_month_transaction,
+   	sum(Count_Transaction) total_pembelian_produk
+FROM
+	data_retail
+WHERE 
+	Product = 'sepatu' AND
+    EXTRACT(YEAR from (from_unixtime(Last_Transaction/1000))) in (2018, 2019)
+GROUP BY
+	1
+ORDER BY 
+	2 asc
 LIMIT 
 	3
 
