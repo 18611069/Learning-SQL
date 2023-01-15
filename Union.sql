@@ -2,6 +2,7 @@
 # each SELECT statement within UNION must have the same number of columns #
 # columns must have similar data types #
 # the columns in each SELECT statement must be in the same order #
+# If table 1 (names(kim,jung,jeon,lee,ahn), operator(sk, lg, naver, k2, kakao)) & table 2 (names(kim,jung,jeon,lee,han), hp(ip, samsung, oppo, huawei, LG))==> will be 6 rows#
 
 select kode_produk, nama_produk,harga
 from ms_produk_1
